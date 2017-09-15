@@ -1,5 +1,7 @@
 {
   "name": "react-spinner",
+  "email": "dawidpoliszak@op.pl",
+  "url": "https://github.com/Dzuming/react-spinner",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
