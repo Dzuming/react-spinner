@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     let settings = {
       shape: "triangleUp",
-      
+      animation: "bounceIn",
       time: "2s",
       duration: 'infinite'
     }
