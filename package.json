@@ -3,7 +3,7 @@
   "name": "react-easy-spinner",
   "email": "dawidpoliszak@op.pl",
   "url": "https://github.com/Dzuming/react-spinner",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "main": "build/index.js",
   "scripts": {
