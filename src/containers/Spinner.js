@@ -10,7 +10,6 @@ class Spinner extends Component {
   constructor(props) {
     super(props)
     this.state = {}
-    console.log(keyFramesStyle(props.shape))
     keyFramesStyle(props.shape).styles.map(animation => injectStyle(animation));
   }
 
