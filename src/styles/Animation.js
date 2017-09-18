@@ -52,7 +52,7 @@ const keyFramesStyle = (type) => {
 
 }
 
-const Animation = (type, time, duration = 'infinite') => {
+const Animation = (type, time, duration) => {
 
   return {
       WebkitAnimation: `${type} ${time} ${duration}`

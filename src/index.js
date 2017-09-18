@@ -31,9 +31,14 @@ class Spinner extends Component {
   }
 }
 Spinner.propTypes = {
-  animation: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  animation: PropTypes.string,
+  time: PropTypes.string,
   duration: PropTypes.string,
   shape: PropTypes.string.isRequired
+};
+Spinner.defaultProps = {
+  animation: 'pulse',
+  time: '2s',
+  duration: 'infinite',
 };
 export default Spinner;
