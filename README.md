@@ -2,13 +2,13 @@
 Working on
 
 ## Install
-```
+```sh
 npm i react-easy-spinner
 ```
 ## Usage
 To app.js file add:
 
-```
+```js
 import React, {Component} from 'react';
 import Spinner from 'react-easy-spinner';
 class App extends Component {
