@@ -19,11 +19,10 @@ class Spinner extends Component {
       loader: Loader,
       cog: Cog
     };
-    const {shape, animation, time, duration} = this.props;
     const ShapeComponent = ShapeLookUp[shape];
     keyFramesStyle(shape)
-    .styles
-    .map(animation => injectStyle(animation));
+      .styles
+      .map(animation => injectStyle(animation));
     return (
       <div>
         <div style={{
@@ -41,9 +40,15 @@ class Spinner extends Component {
 }
 Spinner.propTypes = {
   animation: PropTypes.string,
-  time: PropTypes.string,
   duration: PropTypes.string,
-  shape: PropTypes.string.isRequired
+  shape: PropTypes.string.isRequired,
+  time: function (props, propName, componentName) {
+    let value = props[propName],
+      numberFromValue = parseInt(value);
+    if (numberFromValue <= 0 || numberFromValue > 10) {
+      return new Error('You can only use values between 1 and 10');
+    }
+  }
 };
 Spinner.defaultProps = {
   animation: 'pulse',
