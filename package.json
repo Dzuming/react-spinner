@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/Dzuming/react-spinner"
   },
-  "version": "0.2.1",
+  "version": "1.0.0",
   "private": false,
   "main": "build/index.js",
   "scripts": {
