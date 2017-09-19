@@ -27,7 +27,7 @@ class Spinner extends Component {
     return (
       <div>
         <div style={{
-          ...SpinnerStyle.background
+          ...SpinnerStyle(0.5).background
         }}></div>
         {ShapeComponent && <ShapeComponent
           shape={shape}
