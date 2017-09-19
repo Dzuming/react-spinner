@@ -1,5 +1,6 @@
 React-easy-spinner [![npm version](https://badge.fury.io/js/react-easy-spinner.svg)](http://badge.fury.io/js/react-easy-spinner)
 =======
+Simple modifiable spinner for react.js
 ## Demo
 Live demo: https://dzuming.github.io/react-spinner/
 
@@ -34,7 +35,7 @@ export default App;
 
 | Properties| values       | default |
 |----------|:-------------:|------:|
-| shape |  triangleUp | - |
+| shape |  loader, cog, triangleUp | - |
 | animation |    pulse, run, bounceIn, spin   |   pulse |
 | time | 1-10s |    2s |
 | duration | infinite, number |    infinite |
