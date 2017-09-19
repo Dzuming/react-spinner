@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import Spinner from 'react-easy-spinner';
 class App extends Component {
   state = {
-    shape: 'triangleUp',
-    animation: 'pulse',
+    shape: 'loader',
+    animation: 'spin',
     time: 2,
     duration: 'infinite'
   }
@@ -43,6 +43,7 @@ class App extends Component {
             <label style={labelWidth}>Shape</label>
             <select name="shape" value={this.state.shape} onChange={this.handleChange}>
               <option value="loader">loader</option>
+              <option value="cog">cog</option>
               <option value="triangleUp">triangleUp</option>
             </select>
           </div>

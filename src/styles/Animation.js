@@ -17,7 +17,43 @@ const pulse = (type) => {
           100% { 
             border-bottom: 120px solid ${colors[0]}; 
           }
-        `}[type]
+        `, loader: `
+      @-webkit-keyframes pulse {
+        0% { 
+          color: ${colors[0]}; 
+        }
+        25% { 
+          color: ${colors[1]}; 
+        }
+        50%  { 
+          color: ${colors[2]}; 
+        }
+        75%  { 
+          color: ${colors[3]}; 
+        }
+        100% { 
+          color: ${colors[0]}; 
+        }
+      }
+      `, cog: `
+      @-webkit-keyframes pulse {
+        0% { 
+          color: ${colors[0]}; 
+        }
+        25% { 
+          color: ${colors[1]}; 
+        }
+        50%  { 
+          color: ${colors[2]}; 
+        }
+        75%  { 
+          color: ${colors[3]}; 
+        }
+        100% { 
+          color: ${colors[0]}; 
+        }
+      }
+      `}[type]
 };
 const spin = (type) => {
   return {triangleUp: `
@@ -50,6 +86,24 @@ const spin = (type) => {
             border-right: 60px solid transparent; 
             border-top:0 solid transparent; 
           }
+        `, loader: `
+        @-webkit-keyframes spin {
+          0% {
+            transform: translate(-50%,-50%) rotate(0)  ;
+          }
+          100% {
+            transform: translate(-50%,-50%) rotate(360deg);
+          }
+        }
+        `, cog: `
+        @-webkit-keyframes spin {
+          0% {
+            transform: translate(-50%,-50%) rotate(0);
+          }
+          100% {
+            transform: translate(-50%,-50%) rotate(360deg);
+          }
+        }
         `}[type]
 };
 const run = (type) => {
@@ -75,7 +129,41 @@ const run = (type) => {
       left: 10%; 
       border-bottom:120px solid ${colors[0]};
     }
-  }`}[type]
+  }`, loader: `
+  @-webkit-keyframes run {
+      0% { 
+        left: 10%; 
+      }
+      25% { 
+        left: 36.5%; 
+      }
+      50% { 
+        left : 62.5%; 
+      }
+      75%{ 
+        left: 90%; 
+      }
+      100%{ 
+        left: 10%; 
+    }
+  `, cog: `
+  @-webkit-keyframes run {
+      0% { 
+        left: 10%; 
+      }
+      25% { 
+        left: 36.5%; 
+      }
+      50% { 
+        left : 62.5%; 
+      }
+      75%{ 
+        left: 90%; 
+      }
+      100%{ 
+        left: 10%; 
+    }
+  `}[type]
 };
 const bounceIn = (type) => {
   return {triangleUp: `
@@ -99,7 +187,43 @@ const bounceIn = (type) => {
       transform: translate3d(-46%, -50%, 0);
       border-bottom:120px solid ${colors[3]};
     }
-  }`}[type]
+  }`, loader: `
+  @keyframes bounceIn{
+    10%, 90% {
+      transform: translate3d(-52%, -50%, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(-48%, -50%, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-56%, -50%, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(-46%, -50%, 0);
+    }
+  }
+  `, cog: `
+  @keyframes bounceIn{
+    10%, 90% {
+      transform: translate3d(-52%, -50%, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(-48%, -50%, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-56%, -50%, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(-46%, -50%, 0);
+    }
+  }
+  `}[type]
 };
 const keyFramesStyle = (type) => {
   return {

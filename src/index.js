@@ -8,25 +8,22 @@ import './styles/style.css'
 //shapes
 import TriangleUp from './shapes/TriangleUp'
 import Loader from './shapes/Loader'
+import Cog from './shapes/Cog'
 //other
 import injectStyle from './helpers/injectStyle';
 
 class Spinner extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-    keyFramesStyle(props.shape)
-      .styles
-      .map(animation => injectStyle(animation));
-  }
-
   render() {
     const ShapeLookUp = {
       triangleUp: TriangleUp,
-      loader: Loader
+      loader: Loader,
+      cog: Cog
     };
     const {shape, animation, time, duration} = this.props;
     const ShapeComponent = ShapeLookUp[shape];
+    keyFramesStyle(shape)
+    .styles
+    .map(animation => injectStyle(animation));
     return (
       <div>
         <div style={{
