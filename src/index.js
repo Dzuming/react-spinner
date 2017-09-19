@@ -14,7 +14,7 @@ import injectStyle from './helpers/injectStyle';
 
 class Spinner extends Component {
   render() {
-    const {shape, animation, time, duration} = this.props;
+    const {shape, animation, time, duration, opacity} = this.props;
     const ShapeLookUp = {
       triangleUp: TriangleUp,
       loader: Loader,
@@ -27,7 +27,7 @@ class Spinner extends Component {
     return (
       <div>
         <div style={{
-          ...SpinnerStyle(0.5).background
+          ...SpinnerStyle(opacity).background
         }}></div>
         {ShapeComponent && <ShapeComponent
           shape={shape}
