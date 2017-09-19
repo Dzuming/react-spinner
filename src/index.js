@@ -54,6 +54,7 @@ Spinner.propTypes = {
 Spinner.defaultProps = {
   animation: 'pulse',
   time: '2s',
+  opacity: 0.5,
   duration: 'infinite'
 };
 export default Spinner;

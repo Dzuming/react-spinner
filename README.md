@@ -39,3 +39,4 @@ export default App;
 | animation |    pulse, run, bounceIn, spin   |   pulse |
 | time | 1-10s |    2s |
 | duration | infinite, number |    infinite |
+| opacity | 0-1 |    0.3 |
