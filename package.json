@@ -16,9 +16,11 @@
     "build": "webpack"
   },
   "dependencies": {
+    "css-loader": "^0.23.1",
+    "prop-types": "^15.5.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "prop-types": "^15.5.8",
+    "style-loader": "^0.18.2",
     "webpack": "^2.6.1"
   },
   "devDependencies": {
@@ -27,7 +29,8 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.5.1",
+    "url-loader": "^0.5.9"
   },
   "keywords": [
     "react",

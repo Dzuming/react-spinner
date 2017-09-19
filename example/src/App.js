@@ -32,7 +32,8 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <div style={{
+        <div
+          style={{
           zIndex: "100",
           position: "fixed",
           margin: "10px",
@@ -41,6 +42,7 @@ class App extends Component {
           <div style={paddingBottom}>
             <label style={labelWidth}>Shape</label>
             <select name="shape" value={this.state.shape} onChange={this.handleChange}>
+              <option value="loader">loader</option>
               <option value="triangleUp">triangleUp</option>
             </select>
           </div>

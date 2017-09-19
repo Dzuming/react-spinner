@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import {keyFramesStyle} from './styles/Animation';
 import SpinnerStyle from './styles/Spinner';
 import Shapes from './styles/Shapes'
+import './styles/style.css'
 //shapes
 import TriangleUp from './shapes/TriangleUp'
+import Loader from './shapes/Loader'
 //other
 import injectStyle from './helpers/injectStyle';
 
@@ -20,7 +22,8 @@ class Spinner extends Component {
 
   render() {
     const ShapeLookUp = {
-      triangleUp: TriangleUp
+      triangleUp: TriangleUp,
+      loader: Loader
     };
     const {shape, animation, time, duration} = this.props;
     const ShapeComponent = ShapeLookUp[shape];
