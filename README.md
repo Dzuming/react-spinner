@@ -1,5 +1,5 @@
 ## Demo
-Working on
+Live demo: https://dzuming.github.io/react-spinner/
 
 ## Install
 ```sh
