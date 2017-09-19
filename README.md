@@ -1,3 +1,5 @@
+React-easy-spinner [![npm version](https://badge.fury.io/js/react-easy-spinner.svg)](http://badge.fury.io/js/react-easy-spinner)
+=======
 ## Demo
 Live demo: https://dzuming.github.io/react-spinner/
 
