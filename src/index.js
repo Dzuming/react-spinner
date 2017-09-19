@@ -14,7 +14,7 @@ import injectStyle from './helpers/injectStyle';
 
 class Spinner extends Component {
   render() {
-    const {shape, animation, time, duration, opacity} = this.props;
+    const {shape, animation, time, duration, opacity, bgColor} = this.props;
     const ShapeLookUp = {
       triangleUp: TriangleUp,
       loader: Loader,
@@ -27,7 +27,7 @@ class Spinner extends Component {
     return (
       <div>
         <div style={{
-          ...SpinnerStyle(opacity).background
+          ...SpinnerStyle(opacity, bgColor).background
         }}></div>
         {ShapeComponent && <ShapeComponent
           shape={shape}
@@ -43,6 +43,8 @@ Spinner.propTypes = {
   animation: PropTypes.string,
   duration: PropTypes.string,
   shape: PropTypes.string.isRequired,
+  opacity: PropTypes.string,
+  bgColor: PropTypes.string,
   time: function (props, propName, componentName) {
     let value = props[propName],
       numberFromValue = parseInt(value);
@@ -54,7 +56,7 @@ Spinner.propTypes = {
 Spinner.defaultProps = {
   animation: 'pulse',
   time: '2s',
-  opacity: 0.5,
+  opacity: '0.5',
   duration: 'infinite'
 };
 export default Spinner;

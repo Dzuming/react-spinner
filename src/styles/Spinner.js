@@ -1,5 +1,9 @@
-const Spinner = (opacity) => {
-    return { 
+import hexToRgb from '../helpers/hexToRgb'
+
+const Spinner = (opacity, bgColor) => {
+    const bgRGB = hexToRgb(bgColor)
+    debugger
+    return {
         background: {
             content: '',
             display: 'block',
@@ -8,7 +12,7 @@ const Spinner = (opacity) => {
             left: '0',
             width: '100%',
             height: '100%',
-            backgroundColor: `rgba(0,0,0,${opacity})`
+            backgroundColor: `rgba(${bgRGB.r},${bgRGB.g},${bgRGB.b},${opacity})`
         },
         item: {
             WebkitTransition: 'all', // note the capital 'W' here

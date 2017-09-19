@@ -6,13 +6,13 @@ class App extends Component {
     animation: 'spin',
     time: 2,
     duration: 'infinite',
-    opacity: 0.5
+    opacity: '0.3',
+    bgColor: '#ff0000'
   }
   removeOpacity = () => {
     document.querySelectorAll('')
   }
   handleChange = event => {
-    debugger;
     const target = event.target,
       name = target.name,
       value = target.value;
@@ -24,7 +24,8 @@ class App extends Component {
       animation: this.state.animation,
       time: `${this.state.time}s`,
       duration: this.state.duration,
-      opacity: this.state.opacity
+      opacity: this.state.opacity,
+      bgColor: this.state.bgColor
     }
     const labelWidth = {
       width: '90px',
@@ -91,6 +92,15 @@ class App extends Component {
               value={this.state.opacity}
               onChange={this.handleChange}/>
             <span>{this.state.opacity}</span>
+          </div>
+          <div style={paddingBottom}>
+            <label style={labelWidth}>
+              Bg color</label>
+            <input
+              type="color"
+              name="bgColor"
+              value={this.state.bgColor}
+              onChange={this.handleChange}/>
           </div>
         </div>
         <Spinner {...settings}/>
