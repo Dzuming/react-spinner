@@ -1,31 +1,40 @@
 import React, {Component} from 'react';
-import {Animation, keyFramesStyle} from './styles/Animation';
-import SpinnerStyle from './styles/Spinner';
-import Position from './styles/Position';
-import Shapes from './styles/Shapes'
-import injectStyle from './helpers/injectStyle';
 import PropTypes from 'prop-types';
+//styles
+import {keyFramesStyle} from './styles/Animation';
+import SpinnerStyle from './styles/Spinner';
+import Shapes from './styles/Shapes'
+//shapes
+import TriangleUp from './shapes/TriangleUp'
+//other
+import injectStyle from './helpers/injectStyle';
 
 class Spinner extends Component {
   constructor(props) {
     super(props)
     this.state = {}
-    keyFramesStyle(props.shape).styles.map(animation => injectStyle(animation));
+    keyFramesStyle(props.shape)
+      .styles
+      .map(animation => injectStyle(animation));
   }
 
   render() {
-    const {shape, animation, time, duration} = this.props
+    const ShapeLookUp = {
+      triangleUp: TriangleUp
+    };
+    const {shape, animation, time, duration} = this.props;
+    const ShapeComponent = ShapeLookUp[shape];
     return (
       <div>
         <div style={{
           ...SpinnerStyle.background
         }}></div>
-        <div
-          style={{
-          ...Shapes[shape],
-          ...Position.center,
-          ...Animation(animation, time, duration)
-        }}></div>
+        {ShapeComponent && <ShapeComponent
+          shape={shape}
+          animation={animation}
+          time={time}
+          duration={duration}/>}
+
       </div>
     );
   }
@@ -39,6 +48,6 @@ Spinner.propTypes = {
 Spinner.defaultProps = {
   animation: 'pulse',
   time: '2s',
-  duration: 'infinite',
+  duration: 'infinite'
 };
 export default Spinner;
