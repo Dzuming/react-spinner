@@ -1,5 +1,37 @@
-const colors = ['#fecd6d', '#ef7b88', '#acdacf', '#87c3db']
-const pulse = (type) => {
+function DarkenColor(colorCode, amount) {
+
+  if (colorCode[0] === "#") {
+      colorCode = colorCode.slice(1);
+  }
+debugger;
+  var num = parseInt(colorCode, 16);
+
+  var r = (num >> 16) + amount;
+
+  if (r > 255) {
+      r = 255;
+  }
+
+  var b = ((num >> 8) & 0x00FF) + amount;
+
+  if (b > 255) {
+      b = 255;
+  }
+
+  var g = (num & 0x0000FF) + amount;
+
+  if (g > 255) {
+      g = 255;
+  }
+
+  return ( "#" ) + (g | (b << 8) | (r << 16)).toString(16);
+}
+
+const color = (elColor) => {
+  return [elColor, DarkenColor(elColor, 40), DarkenColor(elColor, 60), DarkenColor(elColor, 120)]
+}
+const pulse = (type, elColor) => {
+  let colors = color(elColor);
   return {triangleUp: `
          @-webkit-keyframes pulse {
           0% { 
@@ -55,7 +87,8 @@ const pulse = (type) => {
       }
       `}[type]
 };
-const spin = (type) => {
+const spin = (type, elColor) => {
+  let colors = color(elColor);
   return {triangleUp: `
          @-webkit-keyframes spin {
           0%   { 
@@ -106,7 +139,8 @@ const spin = (type) => {
         }
         `}[type]
 };
-const run = (type) => {
+const run = (type, elColor) => {
+  let colors = color(elColor);
   return {triangleUp: `
   @-webkit-keyframes run {
     0% { 
@@ -165,7 +199,8 @@ const run = (type) => {
     }
   `}[type]
 };
-const bounceIn = (type) => {
+const bounceIn = (type, elColor) => {
+  let colors = color(elColor);
   return {triangleUp: `
   @keyframes bounceIn{
     10%, 90% {
@@ -225,16 +260,16 @@ const bounceIn = (type) => {
   }
   `}[type]
 };
-const keyFramesStyle = (type) => {
+const keyFramesStyle = (type, elColor) => {
   return {
     styles: [`
-  ${bounceIn(type)}
+  ${bounceIn(type, elColor)}
   `, `
-  ${pulse(type)}
+  ${pulse(type, elColor)}
   `, `
-  ${run(type)}
+  ${run(type, elColor)}
   `, `
-  ${spin(type)}
+  ${spin(type, elColor)}
   `]
   }
 

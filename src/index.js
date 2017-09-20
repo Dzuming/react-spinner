@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 //styles
 import {keyFramesStyle} from './styles/Animation';
-import SpinnerStyle from './styles/Spinner';
+import {SpinnerBg} from './styles/Spinner';
 import Shapes from './styles/Shapes'
 import './styles/style.css'
 //shapes
@@ -14,27 +14,35 @@ import injectStyle from './helpers/injectStyle';
 
 class Spinner extends Component {
   render() {
-    const {shape, animation, time, duration, opacity, bgColor} = this.props;
+    const {
+      shape,
+      animation,
+      time,
+      duration,
+      opacity,
+      bgColor,
+      elColor
+    } = this.props;
     const ShapeLookUp = {
       triangleUp: TriangleUp,
       loader: Loader,
       cog: Cog
     };
     const ShapeComponent = ShapeLookUp[shape];
-    keyFramesStyle(shape)
+    keyFramesStyle(shape, elColor)
       .styles
       .map(animation => injectStyle(animation));
     return (
       <div>
         <div style={{
-          ...SpinnerStyle(opacity, bgColor).background
+          ...SpinnerBg(opacity, bgColor)
         }}></div>
         {ShapeComponent && <ShapeComponent
           shape={shape}
           animation={animation}
           time={time}
-          duration={duration}/>}
-
+          duration={duration}
+          elColor={elColor}/>}
       </div>
     );
   }
@@ -45,6 +53,7 @@ Spinner.propTypes = {
   shape: PropTypes.string.isRequired,
   opacity: PropTypes.string,
   bgColor: PropTypes.string,
+  elColor: PropTypes.string,
   time: function (props, propName, componentName) {
     let value = props[propName],
       numberFromValue = parseInt(value);

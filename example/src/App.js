@@ -7,7 +7,8 @@ class App extends Component {
     time: 2,
     duration: 'infinite',
     opacity: '0.3',
-    bgColor: '#ff0000'
+    bgColor: '#ff0000',
+    elColor: '#000000'
   }
   removeOpacity = () => {
     document.querySelectorAll('')
@@ -25,7 +26,8 @@ class App extends Component {
       time: `${this.state.time}s`,
       duration: this.state.duration,
       opacity: this.state.opacity,
-      bgColor: this.state.bgColor
+      bgColor: this.state.bgColor,
+      elColor: this.state.elColor
     }
     const labelWidth = {
       width: '90px',
@@ -100,6 +102,15 @@ class App extends Component {
               type="color"
               name="bgColor"
               value={this.state.bgColor}
+              onChange={this.handleChange}/>
+          </div>
+          <div style={paddingBottom}>
+            <label style={labelWidth}>
+              El color</label>
+            <input
+              type="color"
+              name="elColor"
+              value={this.state.elColor}
               onChange={this.handleChange}/>
           </div>
         </div>

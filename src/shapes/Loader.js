@@ -1,8 +1,9 @@
 import React from 'react';
 import Shapes from '../styles/Shapes';
 import Position from '../styles/Position';
+import {SpinnerItemSvg} from '../styles/Spinner';
 import {Animation} from '../styles/Animation';
-const Loader = ({shape, animation, time, duration}) => {
+const Loader = ({shape, animation, time, duration, elColor}) => {
     return (
         <div>
             <span
@@ -11,6 +12,7 @@ const Loader = ({shape, animation, time, duration}) => {
                 style={{
                 ...Shapes[shape],
                 ...Position.center,
+                ...SpinnerItemSvg(elColor),
                 ...Animation(animation, time, duration)
             }}></span>
         </div>
