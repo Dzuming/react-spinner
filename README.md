@@ -19,7 +19,11 @@ class App extends Component {
     let settings = {
       shape: "triangleUp",
       animation: "pulse",
-      time: "2s"
+      time: "2s",
+      duration: 'infinite',
+      opacity: '0.3',
+      bgColor: '#27556c',
+      elColor: '#2d1557'
     }
     return (
       <div className="App">
