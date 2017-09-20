@@ -41,18 +41,23 @@ const pulse = (type, elColor) => {
       return `
       @-webkit-keyframes pulse {
        0% { 
+         transform: translate(-50%,-50%) scale(1);
          border-bottom: 120px solid ${colors[0]}; 
        }
        25% { 
+         transform: translate(-50%,-50%) scale(1.4);
          border-bottom: 120px solid ${colors[1]}; 
        }
        50%  { 
+         transform: translate(-50%,-50%) scale(1.8);
          border-bottom: 120px solid ${colors[2]}; 
        }
        75%  { 
+         transform: translate(-50%,-50%) scale(1.4);
          border-bottom: 120px solid ${colors[3]}; 
        }
        100% { 
+         transform: translate(-50%,-50%) scale(1);
          border-bottom: 120px solid ${colors[0]}; 
        }
      `
@@ -61,18 +66,23 @@ const pulse = (type, elColor) => {
       return `
           @-webkit-keyframes pulse {
             0% { 
+              transform: translate(-50%,-50%) scale(1);
               color: ${colors[0]}; 
             }
             25% { 
+              transform: translate(-50%,-50%) scale(1.4);
               color: ${colors[1]}; 
             }
             50%  { 
+              transform: translate(-50%,-50%) scale(1.8);
               color: ${colors[2]}; 
             }
             75%  { 
+              transform: translate(-50%,-50%) scale(1.4);
               color: ${colors[3]}; 
             }
             100% { 
+              transform: translate(-50%,-50%) scale(1);
               color: ${colors[0]}; 
             }
           }
