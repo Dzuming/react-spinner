@@ -1,8 +1,4 @@
-import hexToRgb from '../helpers/hexToRgb'
-
 const Spinner = (opacity, bgColor) => {
-    const bgRGB = hexToRgb(bgColor)
-    debugger
     return {
         background: {
             content: '',
@@ -12,7 +8,8 @@ const Spinner = (opacity, bgColor) => {
             left: '0',
             width: '100%',
             height: '100%',
-            backgroundColor: `rgba(${bgRGB.r},${bgRGB.g},${bgRGB.b},${opacity})`
+            backgroundColor: bgColor,
+            opacity: opacity
         },
         item: {
             WebkitTransition: 'all', // note the capital 'W' here
