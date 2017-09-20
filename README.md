@@ -40,3 +40,5 @@ export default App;
 | time | 1-10s |    2s |
 | duration | infinite, number |    infinite |
 | opacity | 0-1 |    0.3 |
+| bgColor | hex | ![#2d1557](https://placehold.it/15/2d1557/000000?text=+)`#2d1557` |
+| elColor | hex |    ![#27556c](https://placehold.it/15/27556c/000000?text=+)`#27556c` |
