@@ -7,8 +7,8 @@ class App extends Component {
     time: 2,
     duration: 'infinite',
     opacity: '0.3',
-    bgColor: '#ff0000',
-    elColor: '#000000'
+    bgColor: '#27556c',
+    elColor: '#2d1557'
   }
   removeOpacity = () => {
     document.querySelectorAll('')

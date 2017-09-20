@@ -63,9 +63,11 @@ Spinner.propTypes = {
   }
 };
 Spinner.defaultProps = {
-  animation: 'pulse',
+  animation: 'spin',
   time: '2s',
   opacity: '0.5',
-  duration: 'infinite'
+  duration: 'infinite',
+  bgColor: '#27556c',
+  elColor: '#2d1557'
 };
 export default Spinner;
