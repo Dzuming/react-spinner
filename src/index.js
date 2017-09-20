@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 //styles
 import {keyFramesStyle} from './styles/Animation';
 import {SpinnerBg} from './styles/Spinner';
-import Shapes from './styles/Shapes'
-import './styles/style.css'
+import Shapes from './styles/Shapes';
+import './styles/style.css';
 //shapes
-import TriangleUp from './shapes/TriangleUp'
-import Loader from './shapes/Loader'
-import Cog from './shapes/Cog'
+import TriangleUp from './shapes/TriangleUp';
+import Loader from './shapes/Loader';
+import Cog from './shapes/Cog';
+import Rocket from './shapes/Rocket'
 //other
 import injectStyle from './helpers/injectStyle';
 
@@ -26,7 +27,8 @@ class Spinner extends Component {
     const ShapeLookUp = {
       triangleUp: TriangleUp,
       loader: Loader,
-      cog: Cog
+      cog: Cog,
+      rocket: Rocket
     };
     const ShapeComponent = ShapeLookUp[shape];
     keyFramesStyle(shape, elColor)

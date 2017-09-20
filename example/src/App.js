@@ -50,6 +50,7 @@ class App extends Component {
             <select name="shape" value={this.state.shape} onChange={this.handleChange}>
               <option value="loader">loader</option>
               <option value="cog">cog</option>
+              <option value="rocket">rocket</option>
               <option value="triangleUp">triangleUp</option>
             </select>
           </div>
